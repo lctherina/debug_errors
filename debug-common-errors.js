@@ -26,20 +26,22 @@ Think about which debugging methods you found most useful and how you might appl
 
 console.log("Welcome to the bootcamp
 
-// What’s Wrong?
+console.log("Welcome to the bootcamp."); // output Welcome to the bootcamp.
+
+// What’s Wrong? SyntaxError. Needs closing quotes and parenthesis and semicolon.
 
 
-// Program B
+// Program B 
 // Description:
 // This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
 
-let numbers = [2, 4, "eight"];
+let numbers = [2, 4, "eight"];//runtime error
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
 }
 
-// What’s Wrong?
+// What’s Wrong? The string "eight" within the array results in NaN instead of the expected integer 16.
 
 
 
@@ -59,4 +61,17 @@ function isPrime(num) {
 
 console.log(isPrime(7)); // Expected true but gets false
 
-// What’s Wrong?
+// What’s Wrong? in line 56, the return should be set to false instead of true and in line 59, the return should be set to true instead of false
+//This will clear up the confusion with logic error.
+
+function isPrime(num) {
+  if (num<2) return false;
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPrime(7)); // True
